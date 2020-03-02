@@ -4,6 +4,11 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+<p>
+	<% if @user.avatar.attached? %>
+		<%= image_tag url_for(@user.avatar) %>
+	<% end %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
